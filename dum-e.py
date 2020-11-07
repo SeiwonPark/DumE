@@ -17,7 +17,7 @@ print("Getting camera image...")
 while True:
     ret, img = cap.read()
     cv2.namedWindow('img', cv2.WINDOW_NORMAL)
-    #cv2.resizeWindow('img', 500,500)
+    cv2.resizeWindow('img', 640,480)
     #cv2.line(img,(500,250),(0,250),(0,255,0),1)
     #cv2.line(img,(250,0),(250,500),(0,255,0),1)
     #cv2.circle(img, (250, 250), 5, (255, 255, 255), -1)
@@ -44,7 +44,7 @@ while True:
         yy = int(y+(y+w)/2)
         # print (xx)
         # print (yy)
-        center = (xx,yy)
+        center = (xx, yy)
 
 # sending data to arduino
 #         print("Center of Rectangle is :", center)

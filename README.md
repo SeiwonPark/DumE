@@ -10,15 +10,23 @@ This is the project of making Dum-E. And it's still going on. I've commented exp
 
 ## Index   
 + [1. Settings](#1-settings)   
-+ [2. Versions](#2-versions)   
++ [2. Introduction](#2-introduction)   
     + [2.1 Dum-E version 1](#21-dum-e-version-1)   
-    
+
+<br/>   
 
 ## 1. Settings   
-Arduino application : `Arduino IDE 1.8.13`   
-Arduino 
+### Download Arduino Application   
+`Arduino IDE 1.8.13`   
 
+### Install Python Libraries   
+`pip install pyserial`     
+`pip install cv2`   
 
-## 2. Versions   
+<br/>   
+
+## 2. Introduction   
 ### 2.1 Dum-E version 1   
-With [`haarcascade_frontalface_default.xml`](https://github.com/SeiwonPark/DumE/blob/master/haarcascade_frontalface_default.xml), Dum-E tracks the face.   
+With the data `haarcascade_frontalface_default.xml`, Dum-E tracks the face. The camera you set in `dum-e.py` captures your face image using openCV, so it can detect your face and draw a rectangle around your face. Then `dum-e.py` file sends the encoded data of the center of the rectangle to the arduino you connected. (`dum-e.py` is based on [cascade classifier](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html) and its codes are [here](https://github.com/opencv/opencv/tree/master/data/haarcascades). You can also check other functions of cascade classifier [here](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html))       
+
+<br/>   

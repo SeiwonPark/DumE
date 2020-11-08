@@ -14,8 +14,8 @@ void setup()
   Serial.begin(9600);
   servoVer.attach(5); 
   servoHor.attach(6); 
-  servoVer.write(20);
-  servoHor.write(90);
+  servoVer.write(20);  // initial position
+  servoHor.write(90);  // initial position
 }
 
 void Pos()
@@ -23,8 +23,7 @@ void Pos()
   if(prevX != x || prevY != y)
   {
     //tune this range to generate map
-    int servoX = map(x, 640, 0, 20, 160);
-    //tune this range to generate map
+    int servoX = map(x, 640, 0, 20, 160);   // map(value, fromLow, fromHigh, toLow, toHigh)
     int servoY = map(y, 480, 0, 120, 10); 
 
     servoX = min(servoX, 160);
@@ -47,7 +46,7 @@ void loop()
       if(Serial.read() == 'Y')
       {
         y = Serial.parseInt();
-       Pos();
+        Pos();
       }
     }
     while(Serial.available() > 0)
